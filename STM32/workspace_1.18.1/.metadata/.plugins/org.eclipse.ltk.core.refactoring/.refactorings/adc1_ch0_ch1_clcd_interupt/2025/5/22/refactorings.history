@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;adc1_ch0_ch1_clcd_interupt/adc1_ch0_ch1_clcd.ioc&apos; to &apos;adc1_ch0_ch1_clcd_interupt.ioc&apos;" description="Rename resource &apos;adc1_ch0_ch1_clcd.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="adc1_ch0_ch1_clcd.ioc" name="adc1_ch0_ch1_clcd_interupt.ioc" stamp="1748573768124" updateReferences="true"/>
+</session>

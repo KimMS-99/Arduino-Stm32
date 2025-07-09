@@ -1,0 +1,10 @@
+08:35:27 **** Build of configuration Debug for project nucleo_f411re_uart2_printf_uart6_wifi_clcd_dht11_tim4pwm1_servo_tim3rgbLed ****
+make -j8 all 
+arm-none-eabi-size  nucleo_f411re_uart2_printf_uart6_wifi_clcd_dht11_tim4pwm1_servo_tim3rgbLed.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31224	    108	   4492	  35824	   8bf0	nucleo_f411re_uart2_printf_uart6_wifi_clcd_dht11_tim4pwm1_servo_tim3rgbLed.elf
+Finished building: default.size.stdout
+ 
+
+08:35:27 Build Finished. 0 errors, 0 warnings. (took 338ms)
+

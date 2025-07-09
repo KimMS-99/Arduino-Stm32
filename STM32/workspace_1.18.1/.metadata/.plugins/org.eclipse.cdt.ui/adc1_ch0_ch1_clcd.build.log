@@ -1,0 +1,10 @@
+14:07:20 **** Incremental Build of configuration Debug for project adc1_ch0_ch1_clcd ****
+make -j8 all 
+arm-none-eabi-size  adc1_ch0_ch1_clcd.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29944	    468	   2140	  32552	   7f28	adc1_ch0_ch1_clcd.elf
+Finished building: default.size.stdout
+ 
+
+14:07:20 Build Finished. 0 errors, 0 warnings. (took 250ms)
+

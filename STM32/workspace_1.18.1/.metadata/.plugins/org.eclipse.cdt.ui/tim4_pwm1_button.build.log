@@ -1,0 +1,34 @@
+15:14:48 **** Incremental Build of configuration Debug for project tim4_pwm1_button ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:114:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  114 |   printf("time4_pwm1_button start!\r\n");
+      |   ^~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:114:3: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  114 |   printf("time4_pwm1_button start!\r\n");
+      |   ^~~~~~
+../Core/Src/main.c:114:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c: In function 'Error_Handler':
+../Core/Src/main.c:410:11: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  410 |           printf("Error_Handler()\r\n");
+      |           ^~~~~~
+../Core/Src/main.c:410:11: note: include '<stdio.h>' or provide a declaration of 'printf'
+arm-none-eabi-gcc -o "tim4_pwm1_button.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\INTEL003\STM32CubeIDE\workspace_1.18.1\tim4_pwm1_button\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="tim4_pwm1_button.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: tim4_pwm1_button.elf
+ 
+arm-none-eabi-size  tim4_pwm1_button.elf 
+arm-none-eabi-objdump -h -S tim4_pwm1_button.elf  > "tim4_pwm1_button.list"
+   text	   data	    bss	    dec	    hex	filename
+  16992	    112	   2088	  19192	   4af8	tim4_pwm1_button.elf
+Finished building: default.size.stdout
+ 
+Finished building: tim4_pwm1_button.list
+ 
+
+15:14:49 Build Finished. 0 errors, 3 warnings. (took 807ms)
+

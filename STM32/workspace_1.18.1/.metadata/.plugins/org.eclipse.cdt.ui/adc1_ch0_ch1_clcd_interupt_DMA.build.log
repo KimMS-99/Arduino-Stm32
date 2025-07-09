@@ -1,0 +1,74 @@
+14:42:15 **** Incremental Build of configuration Debug for project adc1_ch0_ch1_clcd_interupt_DMA ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:122:32: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
+  122 |   if(HAL_ADC_Start_DMA(&hadc1, ADC1ConvertValue, 2) != HAL_OK)
+      |                                ^~~~~~~~~~~~~~~~
+      |                                |
+      |                                volatile uint16_t * {aka volatile short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:295,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h:594:72: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'volatile uint16_t *' {aka 'volatile short unsigned int *'}
+  594 | HAL_StatusTypeDef HAL_ADC_Start_DMA(ADC_HandleTypeDef *hadc, uint32_t *pData, uint32_t Length);
+      |                                                              ~~~~~~~~~~^~~~~
+../Core/Src/main.c:147:46: warning: format '%lu' expects argument of type 'long unsigned int', but argument 3 has type 'int' [-Wformat=]
+  147 |                   sprintf(lcd_buf1, "VAR : %lu        ", ADC1ConvertValue[0]);
+      |                                            ~~^           ~~~~~~~~~~~~~~~~~~~
+      |                                              |                           |
+      |                                              long unsigned int           int
+      |                                            %u
+../Core/Src/main.c:148:46: warning: format '%lu' expects argument of type 'long unsigned int', but argument 3 has type 'int' [-Wformat=]
+  148 |                   sprintf(lcd_buf2, "CDS : %lu        ", ADC1ConvertValue[1]);
+      |                                            ~~^           ~~~~~~~~~~~~~~~~~~~
+      |                                              |                           |
+      |                                              long unsigned int           int
+      |                                            %u
+../Core/Src/main.c:153:35: warning: format '%lu' expects argument of type 'long unsigned int', but argument 2 has type 'int' [-Wformat=]
+  153 |                   printf("VAR = %lu, VAR_V = %lf CDS = %lu\r\n", ADC1ConvertValue[0], ADC1ConvertValue[0] * 3.3 / 4096, ADC1ConvertValue[1]);
+      |                                 ~~^                              ~~~~~~~~~~~~~~~~~~~
+      |                                   |                                              |
+      |                                   long unsigned int                              int
+      |                                 %u
+../Core/Src/main.c:153:58: warning: format '%lu' expects argument of type 'long unsigned int', but argument 4 has type 'int' [-Wformat=]
+  153 |                   printf("VAR = %lu, VAR_V = %lf CDS = %lu\r\n", ADC1ConvertValue[0], ADC1ConvertValue[0] * 3.3 / 4096, ADC1ConvertValue[1]);
+      |                                                        ~~^                                                              ~~~~~~~~~~~~~~~~~~~
+      |                                                          |                                                                              |
+      |                                                          long unsigned int                                                              int
+      |                                                        %u
+../Core/Src/main.c:155:48: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
+  155 |                   if(HAL_ADC_Start_DMA(&hadc1, ADC1ConvertValue, 2) != HAL_OK)
+      |                                                ^~~~~~~~~~~~~~~~
+      |                                                |
+      |                                                volatile uint16_t * {aka volatile short unsigned int *}
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h:594:72: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'volatile uint16_t *' {aka 'volatile short unsigned int *'}
+  594 | HAL_StatusTypeDef HAL_ADC_Start_DMA(ADC_HandleTypeDef *hadc, uint32_t *pData, uint32_t Length);
+      |                                                              ~~~~~~~~~~^~~~~
+../Core/Src/main.c:147:47: warning: '        ' directive writing 8 bytes into a region of size between 6 and 10 [-Wformat-overflow=]
+  147 |                   sprintf(lcd_buf1, "VAR : %lu        ", ADC1ConvertValue[0]);
+      |                                               ^~~~~~~~
+../Core/Src/main.c:147:19: note: 'sprintf' output between 16 and 20 bytes into a destination of size 17
+  147 |                   sprintf(lcd_buf1, "VAR : %lu        ", ADC1ConvertValue[0]);
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:148:47: warning: '        ' directive writing 8 bytes into a region of size between 6 and 10 [-Wformat-overflow=]
+  148 |                   sprintf(lcd_buf2, "CDS : %lu        ", ADC1ConvertValue[1]);
+      |                                               ^~~~~~~~
+../Core/Src/main.c:148:19: note: 'sprintf' output between 16 and 20 bytes into a destination of size 17
+  148 |                   sprintf(lcd_buf2, "CDS : %lu        ", ADC1ConvertValue[1]);
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "adc1_ch0_ch1_clcd_interupt_DMA.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\INTEL003\STM32CubeIDE\workspace_1.18.1\adc1_ch0_ch1_clcd_interupt_DMA\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adc1_ch0_ch1_clcd_interupt_DMA.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adc1_ch0_ch1_clcd_interupt_DMA.elf
+ 
+arm-none-eabi-size  adc1_ch0_ch1_clcd_interupt_DMA.elf 
+arm-none-eabi-objdump -h -S adc1_ch0_ch1_clcd_interupt_DMA.elf  > "adc1_ch0_ch1_clcd_interupt_DMA.list"
+   text	   data	    bss	    dec	    hex	filename
+  32632	    468	   2244	  35344	   8a10	adc1_ch0_ch1_clcd_interupt_DMA.elf
+Finished building: default.size.stdout
+ 
+Finished building: adc1_ch0_ch1_clcd_interupt_DMA.list
+ 
+
+14:42:16 Build Finished. 0 errors, 8 warnings. (took 737ms)
+

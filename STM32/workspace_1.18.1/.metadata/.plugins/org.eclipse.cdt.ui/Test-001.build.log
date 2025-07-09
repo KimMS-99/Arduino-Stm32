@@ -1,0 +1,46 @@
+10:20:00 **** Incremental Build of configuration Debug for project Test-001 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:110:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  110 |   printf("mainStart(");
+      |   ^~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:110:3: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  110 |   printf("mainStart(");
+      |   ^~~~~~
+../Core/Src/main.c:110:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:124:40: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  124 |                   printf("%f, start : %d, end : %d\r\n",distance, echo_start, echo_end);
+      |                                       ~^                          ~~~~~~~~~~
+      |                                        |                          |
+      |                                        int                        uint32_t {aka long unsigned int}
+      |                                       %ld
+../Core/Src/main.c:124:50: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  124 |                   printf("%f, start : %d, end : %d\r\n",distance, echo_start, echo_end);
+      |                                                 ~^                            ~~~~~~~~
+      |                                                  |                            |
+      |                                                  int                          uint32_t {aka long unsigned int}
+      |                                                 %ld
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:330:17: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  330 |                 printf("EXTI\r\n");
+      |                 ^~~~~~
+../Core/Src/main.c:330:17: note: include '<stdio.h>' or provide a declaration of 'printf'
+arm-none-eabi-gcc -o "Test-001.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\INTEL003\STM32CubeIDE\workspace_1.18.1\Test-001\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test-001.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Test-001.elf
+ 
+arm-none-eabi-size  Test-001.elf 
+arm-none-eabi-objdump -h -S Test-001.elf  > "Test-001.list"
+   text	   data	    bss	    dec	    hex	filename
+  25992	    468	   2060	  28520	   6f68	Test-001.elf
+Finished building: default.size.stdout
+ 
+Finished building: Test-001.list
+ 
+
+10:20:01 Build Finished. 0 errors, 5 warnings. (took 649ms)
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;tim4_pwm1_button_servo/tim4_pwm1_button.ioc&apos; to &apos;tim4_pwm1_button_servo.ioc&apos;" description="Rename resource &apos;tim4_pwm1_button.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="tim4_pwm1_button.ioc" name="tim4_pwm1_button_servo.ioc" stamp="1748409237337" updateReferences="true"/>
+</session>
